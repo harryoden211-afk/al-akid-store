@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>العقيد | AL AKID</title>
+<meta name="description" content="العقيد | AL AKID — متجر جزائري يجمع بين الأناقة والجودة: عطور، عناية شخصية، أزياء وإكسسوارات للرجال والنساء.">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+
+<!-- ===================== الشريط العلوي ===================== -->
+<header class="topbar">
+  <div class="container topbar-inner">
+    <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="#" class="brand">
+      <img src="logo.png" alt="شعار العقيد">
+      العقيد
+    </a>
+    <nav class="nav-links">
+      <a href="#shop">المتجر</a>
+      <a href="#men">قسم الرجال</a>
+      <a href="#women">قسم النساء</a>
+      <a href="#offers">العروض والباقات</a>
+      <a href="#about">من نحن</a>
+      <a href="#delivery">التوصيل والدفع</a>
+      <a href="#faq">الأسئلة الشائعة</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+    <button class="cart-btn" id="cartToggle">
+      🛍️ السلة (<span id="cartCount">0</span>)
+    </button>
+  </div>
+</header>
+
+<!-- ===================== القائمة الجانبية (موبايل) ===================== -->
+<div class="side-overlay" id="sideOverlay"></div>
+<aside class="side-menu" id="sideMenu">
+  <div class="side-head">
+    <a href="#" class="brand">
+      <img src="logo.png" alt="شعار العقيد">
+      العقيد
+    </a>
+    <button class="side-close" id="sideClose">✕</button>
+  </div>
+  <nav class="side-links">
+    <a href="#shop" class="side-link">🛍️ المتجر</a>
+    <a href="#men" class="side-link">🧑 قسم الرجال</a>
+    <a href="#women" class="side-link">👩 قسم النساء</a>
+    <a href="#offers" class="side-link">🎁 العروض والباقات</a>
+    <a href="#about" class="side-link">🏛️ من نحن</a>
+    <a href="#delivery" class="side-link">🚚 التوصيل والدفع</a>
+    <a href="#faq" class="side-link">❓ الأسئلة الشائعة</a>
+    <a href="#contact" class="side-link">💬 تواصل معنا</a>
+  </nav>
+</aside>
+
+<!-- ===================== البطل ===================== -->
+<section class="hero">
+  <img src="logo.png" alt="العقيد" class="hero-logo">
+  <h1>نظافتك <span class="gold-word">أناقة</span>، وثقتك حضور لا يُنسى</h1>
+  <p class="tagline">Al Akid — AL AKID</p>
+  <div class="arc-divider">
+    <svg viewBox="0 0 68 34" fill="none">
+      <path d="M2 32 A32 32 0 0 1 34 2" stroke="url(#g1)" stroke-width="2"/>
+      <path d="M66 32 A32 32 0 0 0 34 2" stroke="url(#s1)" stroke-width="2"/>
+      <defs>
+        <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#c6a15b"/><stop offset="1" stop-color="#e2c98a"/>
+        </linearGradient>
+        <linearGradient id="s1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#b8bec4"/><stop offset="1" stop-color="#d9dee2"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <div class="hero-cta">
+    <a href="#shop" class="btn-primary">تسوّق المجموعة</a>
+  </div>
+</section>
+
+<!-- ===================== المنتجات المميزة ===================== -->
+<section id="shop">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Featured</span>
+      <h2>المنتجات المميزة</h2>
+      <p>نختار لك أفضل منتجاتنا بعناية لتجسد أعلى معايير الجودة والأناقة. تضم هذه المجموعة المنتجات الأكثر تميزًا والأعلى تقييمًا والتي حازت على ثقة عملائنا بفضل قيمتها وجودتها.</p>
+    </div>
+
+    <div class="categories" id="categories">
+      <button class="cat-btn active" data-cat="الكل">الكل</button>
+      <button class="cat-btn" data-cat="رجالي">رجالي</button>
+      <button class="cat-btn" data-cat="نسائي">نسائي</button>
+    </div>
+
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== قسم الرجال ===================== -->
+<section class="gender-section" id="men">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">For Him</span>
+      <h2>🧑 قسم الرجال</h2>
+    </div>
+    <div class="gender-grid" id="menCats"></div>
+  </div>
+</section>
+
+<!-- ===================== قسم النساء ===================== -->
+<section class="gender-section alt" id="women">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">For Her</span>
+      <h2>👩 قسم النساء</h2>
+    </div>
+    <div class="gender-grid" id="womenCats"></div>
+  </div>
+</section>
+
+<!-- ===================== العروض الخاصة والباقات ===================== -->
+<section class="offers" id="offers">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Offers</span>
+      <h2>العروض الخاصة والباقات</h2>
+      <p>استفد من أفضل العروض والباقات المصممة لتمنحك قيمة أكبر مقابل سعر أقل.</p>
+    </div>
+    <div class="offers-banner">
+      <p>🎁 باقات وعروض حصرية قادمة قريبًا — تابعوا صفحتنا لعدم تفويت أي عرض!</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== من نحن ===================== -->
+<section id="about" class="about">
+  <div class="container about-grid">
+    <div class="about-visual">
+      <img src="logo.png" alt="شعار العقيد">
+    </div>
+    <div class="about-text">
+      <span class="eyebrow">Our Story</span>
+      <h2>العقيد | AL AKID</h2>
+      <p>مرحبًا بكم في العقيد | AL AKID، حيث تلتقي الأناقة بالجودة. نختار لكم بعناية منتجات تجمع بين الفخامة، العملية، والأسعار المناسبة، لنمنحكم تجربة تسوق موثوقة ومميزة. هدفنا أن يصل إليكم كل منتج بأعلى جودة وخدمة تليق بثقتكم.</p>
+      <div class="stats-row single">
+        <div class="stat">
+          <div class="stars">★★★★★</div>
+          <b>4.9</b><span>تقييم العملاء</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== من نحن الموسّع ===================== -->
+<section class="about-extended">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">About Al Akid</span>
+      <h2>من نحن</h2>
+    </div>
+    <div class="about-extended-text">
+      <p>مرحبًا بكم في العقيد | AL AKID.</p>
+      <p>نحن علامة تجارية جزائرية وُلدت من شغف بالأناقة والجودة، ونسعى إلى تقديم تجربة تسوق تجمع بين الفخامة، الثقة، والأسعار العادلة.</p>
+      <p>نختار منتجاتنا بعناية لنوفر تشكيلة مميزة من العطور، مستحضرات العناية، الأزياء، والإكسسوارات للرجال والنساء، مع الحرص على الجودة والاهتمام بأدق التفاصيل.</p>
+      <p>في العقيد لا نبيع المنتجات فحسب، بل نعمل على بناء تجربة تسوق تجعل ثقة العميل ورضاه أولويتنا الأولى.</p>
+      <p><strong>رؤيتنا:</strong> أن نصبح من أبرز المتاجر الإلكترونية في الجزائر في مجال الأناقة والعناية الشخصية، من خلال الجودة، المصداقية، والخدمة الراقية.</p>
+      <p class="closing-line">العقيد | AL AKID<br>الأناقة تبدأ بالثقة.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== التوصيل والدفع ===================== -->
+<section id="delivery" class="info-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Delivery</span>
+      <h2>🚚 التوصيل والدفع</h2>
+    </div>
+    <div class="info-text">
+      <p>في العقيد | AL AKID، نحرص على أن تصلك طلباتك بسرعة وأمان. نتعاون مع شركات توصيل موثوقة لضمان وصول منتجاتك إلى جميع ولايات الجزائر.</p>
+      <p><strong>طرق الدفع:</strong> الدفع عند الاستلام.</p>
+      <p><strong>التوصيل:</strong></p>
+      <ul>
+        <li>التوصيل إلى جميع ولايات الجزائر.</li>
+        <li>تجهيز الطلبات وإرسالها في أسرع وقت ممكن.</li>
+        <li>متابعة حالة الطلب حتى وصوله.</li>
+      </ul>
+      <p>هدفنا هو أن نقدم لك تجربة تسوق سهلة، آمنة، وموثوقة من لحظة الطلب حتى استلام المنتج.</p>
+      <p class="closing-line">ثقتكم هي أولويتنا، ورضاكم هو معيار نجاحنا.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ضمان الجودة ===================== -->
+<section class="info-section alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Quality</span>
+      <h2>🛡️ ضمان الجودة</h2>
+    </div>
+    <div class="info-text">
+      <p>في العقيد | AL AKID، الجودة ليست خيارًا، بل التزام. نحرص على اختيار منتجاتنا بعناية من موردين موثوقين لضمان تقديم أفضل تجربة لعملائنا.</p>
+      <p>نعمل على فحص المنتجات قبل شحنها، ونلتزم بتقديم منتجات مطابقة للوصف، مع خدمة عملاء جاهزة للإجابة عن استفساراتكم ومساعدتكم في حال وجود أي مشكلة.</p>
+      <p class="closing-line">ثقتكم هي أساس نجاحنا، ورضاكم هو أولويتنا في كل طلب.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== الأسئلة الشائعة ===================== -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>الأسئلة الشائعة</h2>
+    </div>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ===================== تواصل معنا ===================== -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Contact</span>
+      <h2>تواصل معنا</h2>
+      <p>لأي استفسار أو طلب خاص، تواصلوا معنا مباشرة عبر صفحتنا على فيسبوك.</p>
+    </div>
+    <button class="btn-primary" id="contactBtn">تواصل معنا عبر فيسبوك</button>
+  </div>
+</section>
+
+<!-- ===================== تقييم العملاء ===================== -->
+<section class="rating-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Rate Us</span>
+      <h2>قيّم تجربتك معنا</h2>
+      <p>رأيك يهمنا ويساعدنا على التطور دائمًا.</p>
+    </div>
+    <div class="rating-widget">
+      <div class="rating-stars" id="ratingStars"></div>
+      <p class="rating-msg" id="ratingMsg"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== النشرة البريدية ===================== -->
+<section id="newsletter" class="newsletter">
+  <div class="container">
+    <h2>كن أول من يعلم</h2>
+    <p>اشترك ليصلك كل جديد عن المجموعات والعروض الحصرية.</p>
+    <form class="newsletter-form" id="newsletterForm">
+      <input type="email" placeholder="بريدك الإلكتروني" required>
+      <button type="submit">اشتراك</button>
+    </form>
+  </div>
+</section>
+
+<!-- ===================== الفوتر ===================== -->
+<footer>
+  <div class="container">
+    <a href="#" class="brand">
+      <img src="logo.png" alt="شعار العقيد" style="height:38px">
+      العقيد
+    </a>
+    <div class="foot-links">
+      <a href="#shop">المتجر</a>
+      <a href="#about">من نحن</a>
+      <a href="#contact">تواصل معنا</a>
+    </div>
+    <p class="copyright">© 2026 العقيد | AL AKID. جميع الحقوق محفوظة.</p>
+  </div>
+</footer>
+
+<!-- ===================== سلة المشتريات ===================== -->
+<div class="overlay" id="overlay"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <h3>سلة المشتريات</h3>
+    <button class="cart-close" id="cartClose">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot">
+    <div class="cart-total">
+      <span>الإجمالي</span>
+      <span class="amount" id="cartTotal">0 دج</span>
+    </div>
+    <button class="checkout-btn" id="checkoutBtn">إتمام الطلب</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast">تمت الإضافة إلى السلة</div>
+
+<script src="script.js?v=3"></script>
+</body>
+</html>
